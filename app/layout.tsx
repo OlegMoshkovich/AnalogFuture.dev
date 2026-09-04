@@ -1,11 +1,10 @@
 import type { Metadata } from "next";
-import { Karla, Instrument_Sans } from "next/font/google";
+import { Inter, Instrument_Sans, Playfair_Display } from "next/font/google";
 import "./globals.css";
 
-const karla = Karla({
+const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-karla",
+  variable: "--font-inter",
   display: "swap",
 });
 
@@ -13,6 +12,13 @@ const instrument = Instrument_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-instrument",
+  display: "swap",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  style: ["normal", "italic"],
+  variable: "--font-playfair",
   display: "swap",
 });
 
@@ -40,8 +46,11 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
-      <body className={`${karla.variable} ${instrument.variable}`}>
+    <html
+      lang="en"
+      className={`${inter.variable} ${instrument.variable} ${playfair.variable}`}
+    >
+      <body>
         {children}
       </body>
     </html>

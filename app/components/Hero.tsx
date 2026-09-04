@@ -4,7 +4,8 @@ export default function Hero() {
       <div className="af-container">
         <div className="hero__topbar">
           <a href="#top" className="hero__brand" aria-label="Analog Future home">
-            ANALOG<span>FUTURE</span>
+            <span>Analog</span>
+            <span>Future</span>
           </a>
           <nav className="hero__nav" aria-label="Primary">
             <a href="#work">Work</a>
@@ -20,8 +21,13 @@ export default function Hero() {
 
       <div className="af-container hero__body">
         <p className="hero__eyebrow">
-          Independent Design &amp; Product Studio&nbsp;&nbsp;·&nbsp;&nbsp;Berlin
-          &nbsp;&nbsp;New York
+          <span>Independent Design &amp; Product Studio</span>
+          <span className="hero__eyebrow-loc">
+            <span className="dot" aria-hidden="true">
+              ·
+            </span>
+            <span className="cities">Berlin New York</span>
+          </span>
         </p>
 
         <h1 className="hero__title">
