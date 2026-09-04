@@ -40,10 +40,13 @@ export default function Hero() {
             <span className="num">01</span> Implemented brand systems
           </li>
           <li>
-            <span className="num">02</span> Digital products
+            <span className="num">02</span> Digital product development
           </li>
           <li>
-            <span className="num">03</span> Visual Communication
+            <span className="num">03</span> AI Ecosystem Design
+          </li>
+          <li>
+            <span className="num">04</span> Visual Communication
           </li>
         </ul>
       </div>
