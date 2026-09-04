@@ -5,7 +5,7 @@ export default function Manifesto() {
         <div className="manifesto__grid">
           <p className="af-kicker">01 / What we do</p>
           <p className="manifesto__statement">
-            Technology moves quickly. People still need ideas they can{" "}
+            Technology moves quickly. People still need products they can{" "}
             <span className="af-serif-italic u">understand</span>,{" "}
             <span className="af-serif-italic">trust</span>, and{" "}
             <span className="af-serif-italic">feel</span>.

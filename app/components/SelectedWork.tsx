@@ -75,25 +75,25 @@ const PROJECTS: Project[] = [
   },
   {
     n: "05",
-    label: "An Analog Future digital product",
+    label: "Analog Future digital product",
     title: "Valmia App",
-    tags: "#branding  #digital-product",
+    tags: "#product-design  #app-development",
     src: asset("/projects/valmia/Artwork (1).png"),
     alt: "Valmia mark over misted forest ridges",
   },
   {
     n: "06",
-    label: "An Analog Future digital product",
+    label: "Analog Future digital product",
     title: "Clone It",
-    tags: "#branding  #digital-product",
+    tags: "#product-design  #app-development",
     src: asset("/projects/clone-it/Artwork (2).png"),
     alt: "clone:it stacked-window wordmark",
   },
   {
     n: "07",
-    label: "An Analog Future digital product",
+    label: "Analog Future digital product",
     title: "Coolbuilding",
-    tags: "#branding  #digital-product",
+    tags: "#product-design  #app-development",
     src: asset("/projects/coolbuilding/Artwork.png"),
     alt: "Coolbuilding CB floor-plan mark",
   },
@@ -125,7 +125,7 @@ export default function SelectedWork() {
             <div className="feature__topline">
               <span className="feature__index">01</span>
               <p className="feature__label">
-                An Analog Future product — In development
+                Analog Future Product
               </p>
             </div>
             <h3 className="feature__title">Cadence</h3>

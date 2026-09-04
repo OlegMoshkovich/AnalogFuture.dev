@@ -21,7 +21,7 @@ export default function Hero() {
 
       <div className="af-container hero__body">
         <p className="hero__eyebrow">
-          <span>Independent Design &amp; Product Studio</span>
+          <span>Independent product and development studio</span>
           <span className="hero__eyebrow-loc">
             <span className="dot" aria-hidden="true">
               ·
@@ -37,10 +37,10 @@ export default function Hero() {
 
         <ul className="hero__signals">
           <li>
-            <span className="num">01</span> Brand Systems
+            <span className="num">01</span> Implemented brand systems
           </li>
           <li>
-            <span className="num">02</span> Digital Products
+            <span className="num">02</span> Digital products
           </li>
           <li>
             <span className="num">03</span> Visual Communication
