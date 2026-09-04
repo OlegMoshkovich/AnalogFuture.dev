@@ -5,9 +5,7 @@ export default function Footer() {
         <p className="af-kicker footer__kicker">04 / Get in touch</p>
 
         <h2 className="footer__cta">
-          Have an idea that
-          <br />
-          needs form?{" "}
+          Have an idea for the product?{" "}
           <a href="mailto:hello@analogfuture.studio">
             Let&rsquo;s talk <span className="af-arrow">↗</span>
           </a>
