@@ -785,6 +785,9 @@ a:hover .af-arrow {
   .approach {
     padding-block: 88px 96px;
   }
+  .approach__head {
+    margin-bottom: 64px;
+  }
   .footer {
     padding-block: 88px 40px;
   }
