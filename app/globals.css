@@ -743,12 +743,50 @@ a:hover .af-arrow {
   .hero__cta {
     grid-column: 3;
   }
+  .hero__eyebrow {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    line-height: 1.55;
+    margin-bottom: 72px;
+  }
+  .hero__eyebrow-break {
+    display: block;
+  }
+  .hero__eyebrow-loc {
+    gap: 0;
+  }
+  .hero__eyebrow-loc .dot {
+    display: none;
+  }
+  .hero__eyebrow-loc .cities {
+    letter-spacing: 0.16em;
+  }
   .hero__signals {
     position: static;
-    margin-top: 40px;
+    margin-top: 72px;
+    gap: 18px;
   }
   .hero__body {
-    justify-content: flex-start;
+    justify-content: center;
+    align-items: flex-start;
+    padding-block: 24px;
+  }
+  .hero__cue {
+    padding-bottom: 56px;
+    padding-top: 32px;
+  }
+  .manifesto {
+    padding-block: 96px 88px;
+  }
+  .work {
+    padding-block: 88px 96px;
+  }
+  .approach {
+    padding-block: 88px 96px;
+  }
+  .footer {
+    padding-block: 88px 40px;
   }
   .cards,
   .approach__cards {

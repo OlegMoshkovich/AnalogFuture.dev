@@ -21,7 +21,10 @@ export default function Hero() {
 
       <div className="af-container hero__body">
         <p className="hero__eyebrow">
-          <span>Independent product and development studio</span>
+          <span className="hero__eyebrow-lead">
+            Independent product and{" "}
+            <span className="hero__eyebrow-break">development studio</span>
+          </span>
           <span className="hero__eyebrow-loc">
             <span className="dot" aria-hidden="true">
               ·
