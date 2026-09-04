@@ -123,10 +123,10 @@ export default function SelectedWork() {
           </div>
           <div className="feature__details">
             <div className="feature__topline">
-              <p className="feature__label">
-                An Analog Future product · In development
-              </p>
               <span className="feature__index">01</span>
+              <p className="feature__label">
+                An Analog Future product — In development
+              </p>
             </div>
             <h3 className="feature__title">Cadence</h3>
             <p className="feature__desc">
@@ -145,9 +145,7 @@ export default function SelectedWork() {
           <div className="cards" key={row[0].n}>
             {row.map((c) => (
               <article
-                className={
-                  "contain" in c && c.contain ? "pcard pcard--curved" : "pcard"
-                }
+                className="pcard"
                 key={c.title}
               >
                 <div
