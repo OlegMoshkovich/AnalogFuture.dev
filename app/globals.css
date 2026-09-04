@@ -788,6 +788,9 @@ a:hover .af-arrow {
   .approach__head {
     margin-bottom: 64px;
   }
+  .approach__statement {
+    margin-top: 24px;
+  }
   .footer {
     padding-block: 88px 40px;
   }
