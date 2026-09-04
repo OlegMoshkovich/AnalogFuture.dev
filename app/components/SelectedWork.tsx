@@ -94,8 +94,8 @@ const PROJECTS: Project[] = [
     label: "An Analog Future digital product",
     title: "Coolbuilding",
     tags: "#branding  #digital-product",
-    src: asset("/projects/coolbuilding/Artwork (2).png"),
-    alt: "Coolbuilding project artwork",
+    src: asset("/projects/coolbuilding/Artwork.png"),
+    alt: "Coolbuilding CB floor-plan mark",
   },
 ];
 
