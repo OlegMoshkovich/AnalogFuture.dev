@@ -341,8 +341,9 @@ a:hover .af-arrow {
 .feature {
   display: grid;
   grid-template-columns: 1.45fr 1fr;
-  background: #1c191d;
+  background: #2e262a;
   color: var(--af-cream-hi);
+  border-radius: 24px;
   overflow: hidden;
 }
 
@@ -423,11 +424,9 @@ a:hover .af-arrow {
   box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
   flex-shrink: 0;
 }
-.phone--back {
-  transform: translateY(12px);
-}
+.phone--back,
 .phone--front {
-  transform: translateY(-6px);
+  transform: none;
 }
 .phone__screen {
   position: relative;
@@ -456,6 +455,9 @@ a:hover .af-arrow {
   background: #e6e0d4;
   overflow: hidden;
 }
+.pcard--curved {
+  border-radius: 20px;
+}
 .pcard__art {
   aspect-ratio: 1;
   position: relative;
@@ -465,6 +467,44 @@ a:hover .af-arrow {
 .pcard__art img {
   object-fit: cover;
   object-position: center;
+}
+.pcard__art--contain {
+  background: #2e262a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px 18px;
+  border-radius: 20px 20px 0 0;
+}
+.pcard__frame {
+  position: relative;
+  width: 88%;
+  aspect-ratio: 1138 / 918;
+}
+.pcard__art--contain img {
+  object-fit: contain;
+  object-position: center right;
+}
+.pcard__art--screens {
+  background: #1c191d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 16px;
+}
+.pcard__screen {
+  position: relative;
+  width: 42%;
+  aspect-ratio: 208 / 430;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #0d0b0c;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+.pcard__screen img {
+  object-fit: cover;
+  object-position: top center;
 }
 .pcard__meta {
   padding: 16px 18px 20px;
@@ -509,71 +549,75 @@ a:hover .af-arrow {
 .approach {
   background: var(--af-lavender-soft);
   color: var(--af-ink);
-  padding-block: clamp(40px, 6vh, 42px) clamp(56px, 9vh, 72px);
+  padding-block: clamp(48px, 8vh, 88px) clamp(56px, 9vh, 96px);
 }
 
 .approach__head {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: clamp(24px, 4vw, 64px);
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: clamp(16px, 2vw, 28px);
   align-items: start;
-  margin-bottom: clamp(40px, 6vh, 64px);
-}
-.approach__lead {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  margin-bottom: clamp(56px, 8vh, 96px);
 }
 .approach__sub {
   font-family: var(--font-body);
   font-size: 15px;
+  line-height: 1.4;
   margin: 0;
-  max-width: 22ch;
+  max-width: 18ch;
 }
 .approach__statement {
   margin: 0;
   font-family: var(--font-helv);
-  font-size: clamp(24px, 3.2vw, 35px);
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  max-width: 22ch;
-  justify-self: end;
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
 }
 
 .approach__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: clamp(12px, 1.6vw, 20px);
+  gap: 0;
+  border-bottom: 1px solid var(--af-ink);
 }
 .acard {
-  background: var(--af-lavender);
-  border: 1px solid var(--af-border-dark);
-  padding: 24px;
-  min-height: 512px;
+  background: transparent;
+  border: 0;
+  border-right: 1px solid var(--af-ink);
+  padding: 28px 28px 28px 0;
+  min-height: 520px;
   display: flex;
   flex-direction: column;
-  gap: 22px;
+}
+.acard + .acard {
+  padding-left: 28px;
+}
+.acard:last-child {
+  border-right: 0;
+  padding-right: 0;
 }
 .acard__num {
   font-family: var(--font-display);
   font-weight: 500;
   font-size: 11.2px;
   letter-spacing: 0.12em;
+  margin: 0;
 }
 .acard__title {
   font-family: var(--font-serif);
   font-style: italic;
-  font-size: clamp(52px, 6vw, 82px);
-  line-height: 0.8;
+  font-weight: 700;
+  font-size: clamp(56px, 7vw, 88px);
+  line-height: 0.85;
   letter-spacing: -0.04em;
-  margin: 0;
-  margin-bottom: auto;
+  margin: 36px 0 auto;
 }
 .acard__desc {
   font-family: var(--font-body);
   font-size: 16px;
   line-height: 1.45;
-  margin: 0;
+  margin: 0 0 20px;
+  max-width: 28ch;
 }
 .acard__svc {
   font-family: var(--font-display);
@@ -656,8 +700,14 @@ a:hover .af-arrow {
     margin-left: 0;
   }
   .approach__statement {
-    justself: start;
     justify-self: start;
+    grid-column: 1;
+  }
+  .acard {
+    padding: 24px 20px 24px 0;
+  }
+  .acard + .acard {
+    padding-left: 20px;
   }
   .feature {
     grid-template-columns: 1fr;
@@ -692,7 +742,16 @@ a:hover .af-arrow {
   .approach__cards {
     grid-template-columns: 1fr;
   }
+  .approach__cards {
+    border-bottom: 0;
+  }
   .acard {
     min-height: 360px;
+    border-right: 0;
+    border-bottom: 1px solid var(--af-ink);
+    padding: 28px 0;
+  }
+  .acard + .acard {
+    padding-left: 0;
   }
 }

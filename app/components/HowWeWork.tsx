@@ -24,10 +24,8 @@ export default function HowWeWork() {
     <section className="approach" id="approach">
       <div className="af-container">
         <div className="approach__head">
-          <div className="approach__lead">
-            <p className="af-kicker">03 / How we work</p>
-            <p className="approach__sub">From first sketch to finished system</p>
-          </div>
+          <p className="af-kicker">03 / How we work</p>
+          <p className="approach__sub">From first sketch to finished system</p>
           <p className="approach__statement">
             Analog Future is an independent, collaborative practice working
             across art direction, identity, information, and digital product

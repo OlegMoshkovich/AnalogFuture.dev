@@ -27,14 +27,34 @@ function Phone({
   );
 }
 
-const PROJECTS = [
+type ProjectScreen = { src: string; alt: string };
+
+type Project = {
+  n: string;
+  label: string;
+  title: string;
+  tags: string;
+} & (
+  | { screens: ProjectScreen[] }
+  | { src: string; alt: string; contain?: boolean }
+);
+
+const PROJECTS: Project[] = [
   {
     n: "02",
     label: "Selected work by Andrea",
     title: "Cubed",
     tags: "#brand-strategy  #website  #web-design",
-    src: asset("/projects/cubed/Group 353.png"),
-    alt: "Cubed — Transforming Hospitality Finance",
+    screens: [
+      {
+        src: asset("/projects/cubed/Frame 2644.png"),
+        alt: "Cubed — Meet Our Founder",
+      },
+      {
+        src: asset("/projects/cubed/Group 353.png"),
+        alt: "Cubed — Our Approach",
+      },
+    ],
   },
   {
     n: "03",
@@ -51,6 +71,7 @@ const PROJECTS = [
     tags: "#data-visualization",
     src: asset("/projects/wecount/SFP_infographic August.png"),
     alt: "WeCount infographic mapping month-to-month change",
+    contain: true,
   },
   {
     n: "05",
@@ -123,14 +144,49 @@ export default function SelectedWork() {
         {[PROJECTS.slice(0, 3), PROJECTS.slice(3)].map((row) => (
           <div className="cards" key={row[0].n}>
             {row.map((c) => (
-              <article className="pcard" key={c.title}>
-                <div className="pcard__art">
-                  <Image
-                    src={c.src}
-                    alt={c.alt}
-                    fill
-                    sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
-                  />
+              <article
+                className={
+                  "contain" in c && c.contain ? "pcard pcard--curved" : "pcard"
+                }
+                key={c.title}
+              >
+                <div
+                  className={
+                    "screens" in c
+                      ? "pcard__art pcard__art--screens"
+                      : "contain" in c && c.contain
+                        ? "pcard__art pcard__art--contain"
+                        : "pcard__art"
+                  }
+                >
+                  {"screens" in c ? (
+                    c.screens.map((s) => (
+                      <div className="pcard__screen" key={s.src}>
+                        <Image
+                          src={s.src}
+                          alt={s.alt}
+                          fill
+                          sizes="(max-width: 620px) 45vw, 18vw"
+                        />
+                      </div>
+                    ))
+                  ) : "contain" in c && c.contain ? (
+                    <div className="pcard__frame">
+                      <Image
+                        src={c.src}
+                        alt={c.alt}
+                        fill
+                        sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
+                      />
+                    </div>
+                  ) : (
+                    <Image
+                      src={c.src}
+                      alt={c.alt}
+                      fill
+                      sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
+                    />
+                  )}
                 </div>
                 <div className="pcard__meta">
                   <p className="pcard__index">{c.n}</p>
