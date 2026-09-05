@@ -783,7 +783,8 @@ a:hover .af-arrow {
     padding-block: 88px 96px;
   }
   .feature__tags {
-    padding-top: 48px;
+    margin-top: 24px;
+    padding-top: 24px;
   }
   .approach {
     padding-block: 88px 96px;
