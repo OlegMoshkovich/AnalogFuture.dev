@@ -13,7 +13,7 @@ export default function Hero() {
             <a href="#studio">Studio</a>
           </nav>
           <a href="#contact" className="hero__cta">
-            Start a project <span className="af-arrow">↗</span>
+            Start a project <span className="af-arrow">↗︎</span>
           </a>
         </div>
         <hr className="af-rule hero__rule" />
