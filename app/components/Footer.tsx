@@ -6,7 +6,7 @@ export default function Footer() {
 
         <h2 className="footer__cta">
           Have an idea for the product?{" "}
-          <a href="mailto:hello@analogfuture.studio">
+          <a href="mailto:hello@analogfuture.dev">
             Let&rsquo;s talk <span className="af-arrow">↗</span>
           </a>
         </h2>
@@ -15,7 +15,7 @@ export default function Footer() {
 
         <div className="footer__bar">
           <span className="brand">Analog Future</span>
-          <a href="mailto:hello@analogfuture.studio">hello@analogfuture.studio</a>
+          <a href="mailto:hello@analogfuture.dev">hello@analogfuture.dev</a>
           <span className="spacer" />
           <span>Berlin · New York</span>
           <a href="#top">Back to top ↑</a>
