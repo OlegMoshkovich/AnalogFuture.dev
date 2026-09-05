@@ -95,6 +95,7 @@ img {
 .af-arrow {
   display: inline-block;
   font-style: normal;
+  font-variant-emoji: text;
   transition: transform 0.25s ease;
 }
 
@@ -670,8 +671,14 @@ a:hover .af-arrow {
 .footer__bar .brand {
   color: var(--af-cream-hi);
 }
-.footer__bar .spacer {
-  flex: 1;
+.footer__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 40px;
+  align-items: baseline;
+}
+.footer__back-to-top {
+  margin-left: auto;
 }
 .footer__bar a,
 .footer__bar span {
@@ -798,6 +805,18 @@ a:hover .af-arrow {
   }
   .footer {
     padding-block: 88px 40px;
+  }
+  .footer__bar {
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .footer__meta {
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+  }
+  .footer__back-to-top {
+    margin-left: 0;
   }
   .cards,
   .approach__cards {

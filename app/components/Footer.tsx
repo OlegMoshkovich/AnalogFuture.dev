@@ -7,18 +7,19 @@ export default function Footer() {
         <h2 className="footer__cta">
           Have an idea for the product?{" "}
           <a href="mailto:hello@analogfuture.dev">
-            Let&rsquo;s talk <span className="af-arrow">↗</span>
+            Let&rsquo;s talk <span className="af-arrow">↗︎</span>
           </a>
         </h2>
 
         <hr className="af-rule footer__rule" />
 
         <div className="footer__bar">
-          <span className="brand">Analog Future</span>
-          <a href="mailto:hello@analogfuture.dev">hello@analogfuture.dev</a>
-          <span className="spacer" />
-          <span>Berlin · New York</span>
-          <a href="#top">Back to top ↑</a>
+          <div className="footer__meta">
+            <span className="brand">Analog Future</span>
+            <a href="mailto:hello@analogfuture.dev">hello@analogfuture.dev</a>
+            <span>Berlin · New York</span>
+          </div>
+          <a href="#top" className="footer__back-to-top">Back to top ↑</a>
         </div>
       </div>
     </footer>
