@@ -772,6 +772,9 @@ a:hover .af-arrow {
     align-items: flex-start;
     padding-block: 24px;
   }
+  .hero__title .line-2 {
+    margin-top: 8px;
+  }
   .hero__cue {
     padding-bottom: 56px;
     padding-top: 32px;
