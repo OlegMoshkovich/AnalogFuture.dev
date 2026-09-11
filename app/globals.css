@@ -654,6 +654,10 @@ a:hover .af-arrow {
    ============================================================ */
 
 @media (max-width: 900px) {
+  .hero__nav {
+    display: none;
+  }
+
   .manifesto__grid,
   .approach__head {
     grid-template-columns: 1fr;
@@ -719,10 +723,6 @@ a:hover .af-arrow {
 }
 
 @media (max-width: 620px) {
-  .hero__nav {
-    display: none;
-  }
-
   .hero__brand {
     grid-column: 1;
   }

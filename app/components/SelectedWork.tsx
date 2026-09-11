@@ -74,7 +74,7 @@ export default function SelectedWork() {
               src="/projects/cadence.png"
               alt="Cadence — folded blue-and-white striped artwork"
               fill
-              priority
+              preload
               sizes="(max-width: 900px) 100vw, 65vw"
             />
           </div>
