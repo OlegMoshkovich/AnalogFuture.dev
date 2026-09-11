@@ -4,8 +4,8 @@ export default function Hero() {
       <div className="af-container">
         <div className="hero__topbar">
           <a href="#top" className="hero__brand" aria-label="Analog Future home">
-            <span>Analog</span>
-            <span>Future</span>
+            <span className="hero__brand-analog">Analog</span>
+            <span className="hero__brand-future">Future</span>
           </a>
           <nav className="hero__nav" aria-label="Primary">
             <a href="#work">Work</a>
@@ -13,7 +13,7 @@ export default function Hero() {
             <a href="#studio">Studio</a>
           </nav>
           <a href="#contact" className="hero__cta">
-            Start a project <span className="af-arrow">↗︎</span>
+            Start a project <span className="af-arrow">↗</span>
           </a>
         </div>
         <hr className="af-rule hero__rule" />
@@ -22,40 +22,37 @@ export default function Hero() {
       <div className="af-container hero__body">
         <p className="hero__eyebrow">
           <span className="hero__eyebrow-lead">
-            Independent product and{" "}
-            <span className="hero__eyebrow-break">development studio</span>
+            Independent design &amp; technology studio
           </span>
           <span className="hero__eyebrow-loc">
+            <span>Berlin</span>
             <span className="dot" aria-hidden="true">
               ·
             </span>
-            <span className="cities">Berlin New York</span>
+            <span>New York</span>
           </span>
         </p>
 
         <h1 className="hero__title">
           <span className="line-1">Analog</span>
-          <span className="line-2">hi</span>
+          <span className="line-2">Future</span>
         </h1>
 
         <ul className="hero__signals">
           <li>
-            <span className="num">01</span> Implemented brand systems
+            <span className="num">01</span> Brand strategy &amp; identity
           </li>
           <li>
-            <span className="num">02</span> Digital product development
+            <span className="num">02</span> Digital product design &amp; dev
           </li>
           <li>
-            <span className="num">03</span> AI Ecosystem Design
-          </li>
-          <li>
-            <span className="num">04</span> Visual Communication
+            <span className="num">03</span> AI products &amp; systems
           </li>
         </ul>
       </div>
 
       <a href="#work" className="hero__cue">
-        Selected Work ↓
+        Selected work ↓
       </a>
     </header>
   );

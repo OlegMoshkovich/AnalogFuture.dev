@@ -1,101 +1,62 @@
 import Image from "next/image";
 
-function asset(path: string) {
-  return encodeURI(path);
-}
-
-function Phone({
-  variant,
-  src,
-  alt,
-}: {
-  variant: "back" | "front";
-  src: string;
-  alt: string;
-}) {
-  return (
-    <div className={`phone phone--${variant}`}>
-      <div className="phone__screen">
-        <Image
-          src={src}
-          alt={alt}
-          fill
-          sizes="(max-width: 900px) 42vw, 210px"
-        />
-      </div>
-    </div>
-  );
-}
-
-type ProjectScreen = { src: string; alt: string };
-
 type Project = {
   n: string;
   label: string;
   title: string;
   tags: string;
-} & (
-  | { screens: ProjectScreen[] }
-  | { src: string; alt: string; contain?: boolean }
-);
+  src: string;
+  alt: string;
+};
 
 const PROJECTS: Project[] = [
   {
     n: "02",
-    label: "Selected work by Andrea",
+    label: "Brand strategy, brand identity",
     title: "Cubed",
-    tags: "#brand-strategy  #website  #web-design",
-    screens: [
-      {
-        src: asset("/projects/cubed/Frame 2644.png"),
-        alt: "Cubed — Meet Our Founder",
-      },
-      {
-        src: asset("/projects/cubed/Group 353.png"),
-        alt: "Cubed — Our Approach",
-      },
-    ],
-  },
-  {
-    n: "03",
-    label: "Selected work by Andrea",
-    title: "Earthen",
-    tags: "#brand-strategy  #web-design",
-    src: asset("/projects/earthen/Artwork.png"),
-    alt: "Earthen geometric mark on a projecting sign",
+    tags: "#hospitality  #finance",
+    src: "/projects/cubed.png",
+    alt: "Cubed business cards in purple and olive",
   },
   {
     n: "04",
-    label: "Client: Society of Family Planning",
+    label: "Data visualization",
     title: "#WeCount",
-    tags: "#data-visualization",
-    src: asset("/projects/wecount/SFP_infographic August.png"),
-    alt: "WeCount infographic mapping month-to-month change",
-    contain: true,
+    tags: "#society-of-family-planning",
+    src: "/projects/wecount.png",
+    alt: "WeCount dotted map with clustered data highlights",
+  },
+  {
+    n: "03",
+    label: "Brand strategy, brand identity",
+    title: "Earthen",
+    tags: "#brand-strategy   #web-design",
+    src: "/projects/earthen.png",
+    alt: "Earthen wordmark over a dark landscape",
   },
   {
     n: "05",
-    label: "Analog Future digital product",
+    label: "An Analog Future digital product",
     title: "Valmia App",
-    tags: "#product-design  #app-development",
-    src: asset("/projects/valmia/Artwork (1).png"),
+    tags: "#app   #community",
+    src: "/projects/valmia.png",
     alt: "Valmia mark over misted forest ridges",
   },
   {
-    n: "06",
-    label: "Analog Future digital product",
-    title: "Clone It",
-    tags: "#product-design  #app-development",
-    src: asset("/projects/clone-it/Artwork (2).png"),
-    alt: "clone:it stacked-window wordmark",
+    n: "07",
+    label: "An Analog Future digital product",
+    title: "Coolbuilding",
+    tags: "#architecture #map   #digital-product",
+    src: "/projects/coolbuilding.png",
+    alt: "Coolbuilding CB floor-plan mark",
   },
   {
-    n: "07",
-    label: "Analog Future digital product",
-    title: "Coolbuilding",
-    tags: "#product-design  #app-development",
-    src: asset("/projects/coolbuilding/Artwork.png"),
-    alt: "Coolbuilding CB floor-plan mark",
+    n: "06",
+    label: "An Analog Future digital product",
+    title: "Clone It",
+    tags: "#construction   #digital-product",
+    src: "/projects/clone-it.png",
+    alt: "Sunlit slatted facade for Clone It",
   },
 ];
 
@@ -105,97 +66,56 @@ export default function SelectedWork() {
       <div className="af-container">
         <div className="work__head">
           <p className="af-kicker">02 / Selected work</p>
-          <span className="count">Seven projects</span>
         </div>
 
         <article className="feature">
           <div className="feature__art">
-            <Phone
-              variant="back"
-              src={asset("/projects/cadence/Year_ Month View V1.png")}
-              alt="Cadence month view"
-            />
-            <Phone
-              variant="front"
-              src={asset("/projects/cadence/Weekly.png")}
-              alt="Cadence weekly view"
+            <Image
+              src="/projects/cadence.png"
+              alt="Cadence — folded blue-and-white striped artwork"
+              fill
+              priority
+              sizes="(max-width: 900px) 100vw, 65vw"
             />
           </div>
           <div className="feature__details">
-            <div className="feature__topline">
-              <span className="feature__index">01</span>
-              <p className="feature__label">
-                Analog Future Product
-              </p>
-            </div>
+            <p className="feature__index">01</p>
+            <p className="feature__label">
+              An Analog Future product · In development
+            </p>
             <h3 className="feature__title">Cadence</h3>
             <p className="feature__desc">
               A time-awareness platform that turns everyday activity into a
               visual record of how life is actually lived.
             </p>
             <p className="feature__tags">
-              Product strategy · Identity
+              Product strategy&nbsp;&nbsp; Identity
               <br />
-              UX / UI · Design system
+              UX / UI&nbsp;&nbsp; Design system
             </p>
           </div>
         </article>
 
-        {[PROJECTS.slice(0, 3), PROJECTS.slice(3)].map((row) => (
-          <div className="cards" key={row[0].n}>
-            {row.map((c) => (
-              <article
-                className="pcard"
-                key={c.title}
-              >
-                <div
-                  className={
-                    "screens" in c
-                      ? "pcard__art pcard__art--screens"
-                      : "contain" in c && c.contain
-                        ? "pcard__art pcard__art--contain"
-                        : "pcard__art"
-                  }
-                >
-                  {"screens" in c ? (
-                    c.screens.map((s) => (
-                      <div className="pcard__screen" key={s.src}>
-                        <Image
-                          src={s.src}
-                          alt={s.alt}
-                          fill
-                          sizes="(max-width: 620px) 45vw, 18vw"
-                        />
-                      </div>
-                    ))
-                  ) : "contain" in c && c.contain ? (
-                    <div className="pcard__frame">
-                      <Image
-                        src={c.src}
-                        alt={c.alt}
-                        fill
-                        sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
-                      />
-                    </div>
-                  ) : (
-                    <Image
-                      src={c.src}
-                      alt={c.alt}
-                      fill
-                      sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
-                    />
-                  )}
-                </div>
-                <div className="pcard__meta">
-                  <p className="pcard__index">{c.n}</p>
-                  <p className="pcard__label">{c.label}</p>
-                  <h3 className="pcard__title">{c.title}</h3>
-                  <p className="pcard__tags">{c.tags}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        ))}
+        <div className="cards">
+          {PROJECTS.map((project) => (
+            <article className="pcard" key={project.title}>
+              <div className="pcard__art">
+                <Image
+                  src={project.src}
+                  alt={project.alt}
+                  fill
+                  sizes="(max-width: 620px) 100vw, (max-width: 900px) 50vw, 33vw"
+                />
+              </div>
+              <div className="pcard__meta">
+                <p className="pcard__index">{project.n}</p>
+                <p className="pcard__label">{project.label}</p>
+                <h3 className="pcard__title">{project.title}</h3>
+                <p className="pcard__tags">{project.tags}</p>
+              </div>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
