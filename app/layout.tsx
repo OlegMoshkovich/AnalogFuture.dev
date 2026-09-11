@@ -1,31 +1,33 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Sans, Playfair_Display } from "next/font/google";
+import { Karla, Instrument_Sans, Instrument_Serif } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const karla = Karla({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ["300", "500", "600"],
+  variable: "--font-karla",
   display: "swap",
 });
 
-const instrument = Instrument_Sans({
+const instrumentSans = Instrument_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
   variable: "--font-instrument",
   display: "swap",
 });
 
-const playfair = Playfair_Display({
+const instrumentSerif = Instrument_Serif({
   subsets: ["latin"],
-  style: ["normal", "italic"],
-  variable: "--font-playfair",
+  weight: "400",
+  style: "italic",
+  variable: "--font-instrument-serif",
   display: "swap",
 });
 
 export const metadata: Metadata = {
   title: "Analog Future — Independent Design & Product Studio",
   description:
-    "Analog Future is an independent design and product studio working across brand systems, digital products, and visual communication. Berlin · New York.",
+    "Analog Future is an independent, collaborative practice working across art direction, identity, information, and digital product design. Berlin · New York.",
   keywords: [
     "design studio",
     "brand systems",
@@ -48,11 +50,9 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrument.variable} ${playfair.variable}`}
+      className={`${karla.variable} ${instrumentSans.variable} ${instrumentSerif.variable}`}
     >
-      <body>
-        {children}
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

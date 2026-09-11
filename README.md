@@ -4,7 +4,7 @@ Marketing site for **Analog Future** — an independent design & product studio
 (brand systems, digital products, visual communication).
 
 Built with **Next.js** (App Router) + TypeScript, from the
-[Figma design](https://www.figma.com/design/QXHQAw0WusgMHZ90TDX4H6/Analog-Future-website?node-id=16-2).
+[Figma desktop homepage](https://www.figma.com/design/QXHQAw0WusgMHZ90TDX4H6/Analog-Future-website?node-id=28-4867).
 
 ## Getting started
 
@@ -17,14 +17,13 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Structure
 
-- `app/layout.tsx` — fonts (Karla, Instrument Sans) + metadata
+- `app/layout.tsx` — fonts (Karla, Instrument Sans, Instrument Serif) + metadata
 - `app/globals.css` — design tokens + all section styling
 - `app/page.tsx` — page composition
 - `app/components/` — `Hero`, `Manifesto`, `SelectedWork`, `HowWeWork`, `Footer`
+- `public/projects/` — artwork exported from the Figma desktop frame
 
 ## Notes
 
-Project imagery (the Cadence app calendars, project artwork) is recreated with
-CSS to match the design's colour story — the original Figma export assets are
-short-lived and were not committed. Swap in final artwork under `public/` when
-available.
+Project imagery is committed from the Figma file so the homepage matches the
+desktop design without relying on short-lived MCP asset URLs.

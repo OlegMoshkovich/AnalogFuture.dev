@@ -34,12 +34,14 @@ export default function HowWeWork() {
         </div>
 
         <div className="approach__cards">
-          {STEPS.map((s) => (
-            <article className="acard" key={s.title}>
-              <p className="acard__num">{s.num}</p>
-              <h3 className="acard__title">{s.title}</h3>
-              <p className="acard__desc">{s.desc}</p>
-              <p className="acard__svc">{s.svc}</p>
+          {STEPS.map((step) => (
+            <article className="acard" key={step.title}>
+              <p className="acard__num">{step.num}</p>
+              <div className="acard__main">
+                <h3 className="acard__title">{step.title}</h3>
+                <p className="acard__desc">{step.desc}</p>
+                <p className="acard__svc">{step.svc}</p>
+              </div>
             </article>
           ))}
         </div>
