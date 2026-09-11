@@ -35,7 +35,7 @@ export default function Hero() {
 
         <h1 className="hero__title">
           <span className="line-1">Analog</span>
-          <span className="line-2">Future</span>
+          <span className="line-2">hi</span>
         </h1>
 
         <ul className="hero__signals">
